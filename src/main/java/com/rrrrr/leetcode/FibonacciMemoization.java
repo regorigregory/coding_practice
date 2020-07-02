@@ -9,8 +9,13 @@ package com.rrrrr.leetcode;
  *
  * @author Madero Padero
  */
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 class FibonacciMemoization {
     
     static Map<Integer, Integer> cache = new HashMap<>();
@@ -37,5 +42,15 @@ class FibonacciMemoization {
         int n = 11;
         int result = new FibonacciMemoization().fib(n);
         System.out.println(result);
-    }
+        Integer[] test = new Integer[]{1,2,3,4,5};
+        List<Integer> x = Arrays.asList(test);
+        Integer a = 10;
+        x.stream().map((Integer i) ->{
+            return Integer.toString(i);
+                    })       
+        .collect(Collectors.joining(","));
+        Integer[] copied = Arrays.copyOfRange(test,0, test.length-1);
+        
+        System.out.println(copied.length);
+        }
 }
